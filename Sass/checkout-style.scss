@@ -1,0 +1,24 @@
+// Colors
+$primary: #D1E8E4;
+$secondary: #C37B89;
+$success: #BCCC9A;
+$danger: #EAE7C6;
+$warning: #d6c6ea;
+$dark: #555;
+
+// Fonts 
+
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+$font-primary: 'Yeseva One', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+$font-brand: 'Dancing Script', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+$font-secondary: 'Roboto Condensed', sans-serif;
+
+$font-family-sans-serif:  $font-secondary !default;
+
+.icons {
+    font-family: $font-primary;
+}

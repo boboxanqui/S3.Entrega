@@ -1,0 +1,101 @@
+// Colors
+$primary: #D1E8E4;
+$secondary: #C37B89;
+$success: #BCCC9A;
+$danger: #EAE7C6;
+$warning: #d6c6ea;
+$dark: #555;
+
+// Fonts 
+
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+$font-primary: 'Yeseva One', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+$font-brand: 'Dancing Script', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+$font-secondary: 'Roboto Condensed', sans-serif;
+
+$font-family-sans-serif:  $font-secondary !default;
+
+//header
+.top-header {
+    font-family: $font-primary;
+
+    h1 {
+        font-size: 6rem;
+    }
+}
+
+.low-header{
+
+    .brand {
+        font: 8vw $font-brand;
+        text-shadow: 10px 10px 10px #999;
+    }
+
+    h4{
+        font-size: 2vw;
+        color: $dark;
+    }
+}
+
+//Footer
+footer {
+    a{
+        text-decoration: none;
+    }
+    .text-secondary {
+    font: 2rem $font-brand;
+
+        span:hover{
+            color: $dark;
+        }
+    }
+    .footer-link span:hover {
+        color: $secondary;
+    }
+
+}
+
+.social {
+    font-size: 30px;
+    color: $dark;
+
+    &:hover{
+        color: $secondary;
+    }
+}
+
+
+// MediaQuery
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 14px;
+    }
+    .low-header{
+
+        .brand {
+            font-size: 7rem;
+            text-shadow: 5px 5px 5px #999;
+        }
+    
+        h4{
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .img-fluid {
+            max-width: 350px;
+        }
+    }
+
+    .footer-brand span{
+        font-size: 3rem;
+    }
+    .social > *{
+        font-size: 2rem;
+    }
+ }
+

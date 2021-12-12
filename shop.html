@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- bootstrap installed-->
+  <link rel="stylesheet" href="Sass\main.css">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -16,130 +15,133 @@
   <title>ShopNow</title>
 </head>
 
-<body>
+<body class="container">
 
   <!-- navbar -->
-  <nav class="navbar navbar-expand-md bg-secondary sticky-top">
-    <a class="navbar-brand text-white" href="index.html"><span><i class="fas fa-shopping-cart mr-2"></i></span>
-      <span>Volver</span> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="row bg-primary header-shop sticky-top justify-content-between">
+    <a class="col-6 text-dark p-3 w-auto" href="index.html">
+      <span><i class="fas fa-backward fs-4"></i></span>
+      <span class="fs-4">Back</span> 
+    </a>
+    <a class="col-6 text-dark p-3 text-end w-auto" id="cart" type="button" data-toggle="modal" data-target="#cartModal" onclick="printCart()" href="#beauty">
+      <span class="fs-4">My Cart</span> 
+      <span><i class="fas fa-cart-arrow-down fs-4"></i></span>
+      <p id="cartCounter" class="text-light rounded-circle text-center" style="display:none; background-color: #CC001B; color: white; width: 23px; height: 23px; line-height: 23px; position: absolute; top: 5px; right: 5px;"></p>
+    </a>
+  </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link text-white btn" id="cart" type="button" data-toggle="modal" data-target="#cartModal" onclick="printCart()" href="#beauty"><i class="fas fa-cart-arrow-down"></i>My Cart</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <h1 class="text-center text-secondary shop-brand mt-3 m-5">ShopNow</h1>
+  <h4 class="col-10 col-md-8 col-lg-6 mx-auto text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, veniam!</h4>
 
-  <h1 class="text-center mt-3 m-5">Welcome to the ShopNow</h1>
 
   <!-- Grocery part -->
-  <section>
-    <h2 class="text-center"><i class="fas fa-shopping-basket mr-2"></i>Grocery</h2>
-    <div id="grocery" class="row ml-3 m-5">
+  <section class="my-5 rounded rounded-3 py-4 border border-danger shadow border-3 bg-light" id="grocery">
+    <h1 class="text-center section-name text-dark"><i class="fas fa-shopping-basket fs-2 mr-2 mx-3"></i>Grocery</h1>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">cooking oil</h5>
-          <h1 class="card-text">$10.5</h1>
-          <button type="button" onclick="addToCart(1)" class="btn btn-primary">Add to cart</button>
+    <div id="grocery" class="row ml-3 m-4 justify-content-around ">
+
+      <div class="card rounded rounded-3 border border-danger border-4 col-10 col-md-3 my-2 p-3" >
+        <img src="./images/cookingOil.jpg" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5 >cooking oil</h5>
+          <h2 >$10.5</h2>
+          <button type="button" onclick="addToCart(1)" class="btn btn-outline-danger">Add to cart</button>
         </div>
       </div>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Pasta</h5>
-          <h1 class="card-text">$6.25</h1>
-          <button type="button" onclick="addToCart(2)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-danger border-4 col-10 col-md-3 my-2 p-3" >
+        <img src="./images/pasta.jpg" class="img-fluid rounded rounded-3 my-auto">
+        <div class=" text-center mt-auto p-3">
+          <h5 >Pasta</h5>
+          <h2 >$6.25</h2>
+          <button type="button" onclick="addToCart(2)" class="btn btn-outline-danger">Add to cart</button>
         </div>
       </div>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Instant cupcake mixture</h5>
-          <h1 class="card-text">$5</h1>
-          <button type="button" onclick="addToCart(3)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-danger border-4 col-10 col-md-3 my-2 p-3">
+        <img src="./images/cupcakes.jpg" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5 >Instant cupcake mixture</h5>
+          <h2 >$5</h2>
+          <button type="button" onclick="addToCart(3)" class="btn btn-outline-danger">Add to cart</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- beauty part -->
-  <section>
-    <h2 class="text-center"><i class="fas fa-heart mr-2"></i>Beauty</h2>
-    <div id="beauty" class="row ml-3 m-5">
+  <section class="my-5 rounded rounded-3 py-4 border border-secondary shadow border-3 bg-light" id="beauty">
+    <h1 class="text-center section-name text-dark"><i class="fas fa-heart fs-2 mr-2 mx-3"></i>Beauty</h1>
+    
+    <div id="beauty" class="row ml-3 m-4 justify-content-around">
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">All-in-1</h5>
-          <h1 class="card-text">$260</h1>
-          <button type="button" onclick="addToCart(4)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-secondary border-4 col-10 col-md-3 my-2 p-3" style="min-height: 400px;">
+        <img src="./images/AllInOne.png" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5 >All-in-1</h5>
+          <h2 >$260</h2>
+          <button type="button" onclick="addToCart(4)" class="btn btn-outline-secondary">Add to cart</button>
         </div>
       </div>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Zero makeup kit</h5>
-          <h1 class="card-text">$20.5</h1>
-          <button type="button" onclick="addToCart(5)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-secondary border-4 col-10 col-md-3 my-2 p-3" >
+        <img src="./images/makeup.jpg" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5 >Zero makeup kit</h5>
+          <h2 >$20.5</h2>
+          <button type="button" onclick="addToCart(5)" class="btn btn-outline-secondary">Add to cart</button>
         </div>
       </div>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Lip tints</h5>
-          <h1 class="card-text">$12.75</h1>
-          <button type="button" onclick="addToCart(6)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-secondary border-4 col-10 col-md-3 my-2 p-3">
+        <img src="./images/lipSticks.png" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5>Lip tints</h5>
+          <h2>$12.75</h2>
+          <button type="button" onclick="addToCart(6)" class="btn btn-outline-secondary">Add to cart</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- clothes part -->
-  <section>
-    <h2 class="text-center"><i class="fas fa-tshirt mr-2"></i>Clothes</h2>
-    <div id="clothes" class="row ml-3 m-5">
+  <section class="my-5 rounded rounded-3 py-4 border border-success shadow border-3 bg-light" id="clothes">
+    <h1 class="text-center section-name text-dark"><i class="fas fa-tshirt fs-2 mr-2 mx-3"></i>Clothes</h1>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Lawn dress</h5>
-          <h1 class="card-text">$15</h1>
-          <button type="button" onclick="addToCart(7)" class="btn btn-primary">Add to cart</button>
+    <div id="clothes" class="row ml-3 m-4 justify-content-around">
+
+      <div class="card rounded rounded-3 border border-success border-4 col-10 col-md-3 my-2 p-3" >
+        <img src="./images/Dress.jpg" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5 >Lawn dress</h5>
+          <h2 >$15</h2>
+          <button type="button" onclick="addToCart(7)" class="btn btn-outline-success">Add to cart</button>
         </div>
       </div>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Lawn-chiffon combo</h5>
-          <h1 class="card-text">$19.99</h1>
-          <button type="button" onclick="addToCart(8)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-success border-4 col-10 col-md-3 my-2 p-3" >
+        <img src="./images/lawnCombo.png" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5>Lawn-chiffon combo</h5>
+          <h2>$19.99</h2>
+          <button type="button" onclick="addToCart(8)" class="btn btn-outline-success">Add to cart</button>
         </div>
       </div>
 
-      <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
-        <img src="./images/product.svg" class="grocery-img">
-        <div class="card-body text-center">
-          <h5 class="card-title">Toddler Frock</h5>
-          <h1 class="card-text">$9.99</h1>
-          <button type="button" onclick="addToCart(9)" class="btn btn-primary">Add to cart</button>
+      <div class="card rounded rounded-3 border border-success border-4 col-10 col-md-3 my-2 p-3">
+        <img src="./images/Toddler Frock.png" class="img-fluid rounded rounded-3 my-auto">
+        <div class="text-center mt-auto p-3">
+          <h5>Toddler Frock</h5>
+          <h2>$9.99</h2>
+          <button type="button" onclick="addToCart(9)" class="btn btn-outline-success">Add to cart</button>
         </div>
       </div>
       
     </div>
   </section>
+
+  <h2 class="text-center">Where your dreams begin</h2>
+  <h6 class="col-10 col-md-8 col-lg-6 mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta porro vel molestias, inventore, perferendis recusandae consectetur quia quibusdam corporis ullam voluptatum id. At ipsa, laboriosam obcaecati laudantium reiciendis quae ex?</h6>
 
   <!-- modal -->
   <aside>
@@ -176,7 +178,32 @@
     </div>
   </aside>
 
+  <!-- Footer -->
+  <footer class="container bg-primary mt-5">
+    <div class="row">
+        <div class="col-md-3 col-lg-4 text-center text-md-start p-2 footer-start">
+            <a href="#" class="text-secondary footer-brand"><span>ShopNow</span></a>
+        </div>
+        <div class="col-md-5 col-lg-4 text-center text-dark my-auto">
+          <ul class="list-unstyled list-inline my-auto">
+            <li class="list-inline-item footer-link"> <a href="#!" class="text-dark text-decoration-none"><span>Contact</span></a></li>
+            <li class="list-inline-item">|</li>
+            <li class="list-inline-item footer-link"> <a href="#!" class="text-dark text-decoration-none"> <span>FAQs</span></a></li>
+            <li class="list-inline-item">|</li>
+            <li class="list-inline-item footer-link"> <a href="#!" class="text-dark text-decoration-none"> <span>Conditions</span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center text-md-end my-auto footer-end">
+            <a href="#!" class="m-2 social"><i class="fab fa-facebook-square"></i></a>
+            <a href="#!" class="m-2 social"><i class="fab fa-twitter"></i></a>
+            <a href="#!" class="m-2 social"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+  </footer>
+
   <!-- script tags -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

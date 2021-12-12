@@ -193,6 +193,8 @@ function addToCart(id) {
         break;     
         } 
     }
+
+    showCartCounter();
 }
 
 // Exercise 9
@@ -221,6 +223,8 @@ resumeList.classList.add('list-unstyled');
 
 const resumePrice = document.getElementById('selectSomething');
 
+const cartCounter = document.getElementById('cartCounter');
+
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
     if (cart.length > 0){
@@ -231,6 +235,7 @@ function printCart() {
         resumeList.innerHTML = ''
         resumePrice.innerHTML = `<h3 class="text-center bill px-5">Select Something</h3>`
     }
+    showCartCounter();
 
 }
 
@@ -250,10 +255,10 @@ itemsResumeList = () => {
         <p class="col-5">${item.name}</p>
         <p class="col-3">${item.quantity}</p>
         <p class="col-3">${item.price*item.quantity}</p>
-        <a href="#" class="mx-auto text-danger" onclick="removeFromCart(${item.id})"><i class="fas fa-trash-alt"></i></a>
+        <a href="#!" class="col-1 text-secondary" onclick="removeFromCart(${item.id})"><i class="fas fa-trash-alt"></i></a>
         </li>` 
     })
-    resumeList.innerHTML += `<li class="d-flex justify-content-end"><button type="button" class="btn btn-sm btn-outline-danger ml-auto" onclick="cleanCart()">Remove all</button></li> `
+    resumeList.innerHTML += `<li class="d-flex justify-content-end"><button type="button" class="btn btn-sm btn-outline-secondary ml-auto" onclick="cleanCart()">Remove all</button></li> `
 }
 
 
@@ -267,4 +272,23 @@ totalPriceResumeList = () => {
       resumePrice.innerHTML = `<h4 class="h4 text-center">Total: $${(calculateTotal()).toFixed(2)}</h4> `  
     }
     
+}
+
+showCartCounter = () => {
+    if(cart.length === 0){
+        cartCounter.style.display = 'none'
+    } else {
+        cartCounter.innerHTML = totalQuantityCart ();
+        cartCounter.style.display = 'block'
+    }
+}
+
+totalQuantityCart = () => {
+    let quantity = 0;
+
+    cart.forEach(item => {
+        quantity += item.quantity;
+    })
+
+    return quantity;
 }
